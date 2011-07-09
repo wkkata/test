@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springFramework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName">
+	<!-- manager -->
+	
+	<bean id="baseTransactionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="find">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+		<!-- 
+		<property name="interceptorNames">
+			<list>
+				<value>logInterceptor</value>
+			</list>
+		</property>
+		 -->
+	</bean>
+	<bean id="userService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="org.kjmx.praycards.manager.imp.UserService">
+				<property name="dao" ref="pcUserDao" />
+				<property name="roleGroupDao" ref="pcRoleGroupDao"></property>
+			</bean>
+		</property>
+	</bean>
+	<!--  
+	<bean id="testService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="org.kjmx.praycards.manager.imp.TestServiceImp">
+				<property name="dao" ref="testDao" />
+			</bean>
+		</property>
+	</bean>
+	-->
+</beans>

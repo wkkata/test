@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="org.kjmx.praycards.entities.PCCart" 
+    table="pccart"
+>
+
+    <id
+        name="cartId"
+        type="java.lang.Integer"
+        column="cartID"
+    >
+        <generator class="assigned" />
+    </id>
+
+    <property
+        name="pickDate"
+        type="java.sql.Timestamp"
+        column="pickDate"
+    />
+    <property
+        name="cartState"
+        type="java.lang.Integer"
+        column="cartState"
+        length="1"
+    />
+    <property
+        name="fromAddr"
+        type="java.lang.String"
+        column="fromAddr"
+        length="255"
+    />
+    <property
+        name="toAddr"
+        type="java.lang.String"
+        column="toAddr"
+        length="255"
+    />
+    <property
+        name="content"
+        type="java.lang.String"
+        column="content"
+        length="65535"
+    />
+    <property
+        name="pic"
+        type="binary"
+        column="pic"
+        length="65535"
+    />
+    <property
+        name="fromName"
+        type="java.lang.String"
+        column="fromName"
+        length="60"
+    />
+    <property
+        name="toName"
+        type="java.lang.String"
+        column="toName"
+        length="60"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to Pcuser -->
+    <many-to-one
+        name="pcUser"
+        class="org.kjmx.praycards.entities.PCUser"
+        not-null="true"
+    >
+        <column name="userID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to Pcproduct -->
+    <many-to-one
+        name="pcProduct"
+        class="org.kjmx.praycards.entities.PCProduct"
+        not-null="true"
+    >
+        <column name="productID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

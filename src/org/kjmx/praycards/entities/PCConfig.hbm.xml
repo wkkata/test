@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="org.kjmx.praycards.entities.PCConfig" 
+    table="pcconfig"
+>
+
+    <id
+        name="configId"
+        type="java.lang.Integer"
+        column="configID"
+    >
+        <generator class="native" />
+    </id>
+
+    <property
+        name="configKey"
+        type="java.lang.String"
+        column="configKey"
+        length="50"
+    />
+    <property
+        name="configValue"
+        type="java.lang.String"
+        column="configValue"
+        length="50"
+    />
+    <property
+        name="configData"
+        type="java.lang.String"
+        column="configData"
+        length="255"
+    />
+    <property
+        name="configDesc"
+        type="java.lang.String"
+        column="configDesc"
+        length="255"
+    />
+    <property
+        name="configName"
+        type="java.lang.String"
+        column="configName"
+        length="50"
+    />
+
+    <!-- Associations -->
+  
+
+</class>
+</hibernate-mapping>

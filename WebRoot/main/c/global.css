@@ -1,0 +1,20 @@
+body,header,footer,section,article,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0;padding:0;}
+table {border-collapse:collapse;border-spacing:0;}
+fieldset,img { border:0;}
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
+q:before,q:after {content:'';}
+abbr,acronym {border:0;}
+section,article,aside,header,footer,nav,dialog,figure{display:block;}figure{margin:0;}
+a{text-decoration:none;color:#FFF;}
+a:hover{text-decoration:underline;}
+/* Clear CSS */
+.clearfix:after{content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+.clearfix{display: inline-block;}
+html[xmlns] .clearfix {display: block;}
+* html .clearfix {height: 1%;}
+.mgtmin5{position:relative;z-index:10;margin-top:-5px;}
+
+body{background:#c3c3c3;font:normal 12px/1.5 Tahoma,Verdana,Arial,sans-serif;}

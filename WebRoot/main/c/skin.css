@@ -1,0 +1,47 @@
+body{background:}
+
+.button{width:43px;height:24px;padding:0;margin:0;line-height:24px;font-weight:bold;color:#FFF;border:none;
+	background:url("../i/split_main.jpg") no-repeat 0 -75px;}
+.input{border:1px solid #3996c1;}
+i{overflow:hidden;display:inline-block;width:15px;height:14px;background:url("../i/split_main.jpg") no-repeat -43px -75px;}
+
+.header-top{
+	width:860px;height:55px;margin:0 auto;padding:10px 20px 0;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px;
+	background:#094460;
+	background:-webkit-gradient(linear,left bottom,left top,color-stop(0,rgb(3,52,75)),color-stop(1,rgb(29,111,150)));
+	background:-moz-linear-gradient(center bottom,rgb(3,52,75) 0%,rgb(29,111,150) 100%)
+	}
+.box-logo{float:left;width:120px;height:50px;font-size:30px;font-weight:bold;}
+nav{float:left;margin-top:12px;padding-left:35px;font-weight:bold;}
+nav li{float:left;margin-right:45px;}
+nav li a{display:inline-block;padding-bottom:2px;}
+nav li a:hover{border-bottom:4px solid #FFF;text-decoration:none;}
+.header-top form{float:right;width:140px;}
+.header-top form input{float:left;margin-bottom:3px;}
+.header-top form .input{
+	width:118px;height:16px;padding:2px 10px;line-height:16px;color:#03344b;
+	background:#FFF;
+	background:-webkit-gradient(linear,left bottom,0.1 top,color-stop(0,rgb(200,200,200)),color-stop(1,rgb(255,255,255)));
+	background:-moz-linear-gradient(left bottom 45deg,rgb(200,200,200) 0%,rgb(255,255,255) 50%)
+	}
+.header-top form .input-pass{width:68px;margin-right:7px;}
+
+.sec-banner{position:relative;width:1000px;height:234px;margin:0 auto;}
+.sec-banner .btn-reg{position:absolute;top:75px;right:65px;overflow:hidden;display:block;width:157px;height:75px;text-indent:-6666px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px;
+	border:3px solid #FFF;
+	background:url("../i/split_main.jpg") no-repeat 0 0;}
+
+.sec-content{overflow:hidden;zoom:1;width:1000px;margin:0 auto;
+	background:#338cb6;
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0,rgb(42,116,150)),color-stop(0.1,rgb(51,140,182)));
+	background:-moz-linear-gradient(center top,rgb(42,116,150) 0%,rgb(51,140,182) 10%)}
+
+.side-content{float:left;width:240px;padding:62px 20px 30px;border-right:1px solid #2373a1;}
+.side-content article{margin-top:10px;}
+.sec-main{float:left;width:717px;border-left:1px solid #63a7c7}

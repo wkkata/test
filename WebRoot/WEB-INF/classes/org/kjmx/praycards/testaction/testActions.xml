@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="testActions" namespace="/test" extends="root-struts">
+		<action name="TestAction" class="test">
+			<interceptor-ref name="sessionInterceptor"></interceptor-ref>
+			<result name="success">/test/test.jsp</result>
+		</action>
+
+		<action name="*TestUploadImageAction" class="testUploadImage"
+			method="{1}">
+			<result type="plainText">
+			</result>
+		</action>
+
+		<action name="TestImageAction" class="testImage">
+
+			<result type="stream">
+				<param name="contentType">application/zip</param>
+				<param name="contentDisposition ">tachment;filename=111</param>
+				<param name="inputName">inputStream</param>
+			</result>
+
+		</action>
+
+
+
+	</package>
+</struts>

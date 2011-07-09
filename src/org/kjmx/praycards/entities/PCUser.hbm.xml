@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="org.kjmx.praycards.entities.PCUser" 
+    table="pcuser"
+>
+
+    <id
+        name="userId"
+        type="java.lang.Integer"
+        column="userID"
+    >
+        <generator class="native" />
+    </id>
+
+    <property
+        name="userNo"
+        type="java.lang.String"
+        column="userNO"
+        length="40"
+    />
+    <property
+        name="userName"
+        type="java.lang.String"
+        column="userName"
+        length="60"
+    />
+    <property
+        name="userGender"
+        type="java.lang.Integer"
+        column="userGender"
+        length="1"
+    />
+    <property
+        name="userPassword"
+        type="java.lang.String"
+        column="userPassword"
+        length="50"
+    />
+    <property
+        name="userEmailAddress"
+        type="java.lang.String"
+        column="userEmailAddress"
+        length="60"
+    />
+    <property
+        name="userTel"
+        type="java.lang.String"
+        column="userTel"
+        length="11"
+    />
+    <property
+        name="userState"
+        type="java.lang.Integer"
+        column="userState"
+        length="1"
+    />
+    <property
+        name="userRegDate"
+        type="java.sql.Timestamp"
+        column="userRegDate"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to Pcfdestuser -->
+    <set
+        name="pcfDestUsers"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="userID" />
+        </key>
+        <one-to-many 
+            class="org.kjmx.praycards.entities.PCFDestUser"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to Pcmanagelog -->
+    <set
+        name="pcManageLogs"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="userID" />
+        </key>
+        <one-to-many 
+            class="org.kjmx.praycards.entities.PCManageLog"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to Pccart -->
+    <set
+        name="pcCarts"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="userID" />
+        </key>
+        <one-to-many 
+            class="org.kjmx.praycards.entities.PCCart"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to Pcuserlog -->
+    <set
+        name="pcUserLogs"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="userID" />
+        </key>
+        <one-to-many 
+            class="org.kjmx.praycards.entities.PCUserLog"
+        />
+    </set>
+    <!-- bi-directional many-to-one association to Pcrolegroup -->
+    <many-to-one
+        name="pcRoleGroup"
+        class="org.kjmx.praycards.entities.PCRoleGroup"
+        not-null="true"
+    >
+        <column name="rgID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

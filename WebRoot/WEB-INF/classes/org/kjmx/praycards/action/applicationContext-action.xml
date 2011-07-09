@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springFramework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName">
+	<!-- userAction -->
+	<bean id="loginAction" scope="request" class="org.kjmx.praycards.action.user.LoginAction">
+		<property name="userService" ref="userService" />	
+	</bean>
+	
+	<bean id="registerAction" scope="request" class="org.kjmx.praycards.action.user.RegisterAction" >
+		<property name="userService" ref="userService" />	
+	</bean>
+	<!--$$$$$$$$$$$$$$$$$$$$$$ I am the boundary $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+</beans>

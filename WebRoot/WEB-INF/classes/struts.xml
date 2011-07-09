@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+<constant name="struts.devMode" value="true" />
+<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+
+
+
+<package name="root-struts" namespace="/" extends="struts-default">
+
+<interceptors>
+	
+	<interceptor name="baseSessionInterceptor" class="org.kjmx.praycards.interceptor.SessionInterceptor"></interceptor>
+	
+	<interceptor-stack name="sessionInterceptor">
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		<interceptor-ref name="baseSessionInterceptor"></interceptor-ref>
+	</interceptor-stack>
+	
+</interceptors>
+<!-- 必须在inteceptors之下 -->
+<global-results>
+	<result name="login">/index.jsp</result>
+</global-results>
+
+<!-- Add actions here -->
+</package>
+
+<include file="/org/kjmx/praycards/testaction/testActions.xml"></include>
+<include file="/org/kjmx/praycards/action/user/userActions.xml"></include>
+<!-- Add packages here -->
+
+</struts>

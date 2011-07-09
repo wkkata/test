@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springFramework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://127.0.0.1:3306/praycards" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="myDataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>/org/kjmx/praycards/entities/PCCart.hbm.xml</value>
+				<value>/org/kjmx/praycards/entities/PCConfig.hbm.xml</value>
+				<value>/org/kjmx/praycards/entities/PCFDestUser.hbm.xml</value>
+				<value>/org/kjmx/praycards/entities/PCManageLog.hbm.xml</value>
+				<value>/org/kjmx/praycards/entities/PCProduct.hbm.xml</value>
+				<value>/org/kjmx/praycards/entities/PCRoleGroup.hbm.xml</value>
+				<value>/org/kjmx/praycards/entities/PCUser.hbm.xml</value>
+				<value>/org/kjmx/praycards/entities/PCUserlog.hbm.xml</value>
+			</list>
+		</property>
+		
+		<property name="hibernateProperties">
+			<value>
+				hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+      </value>
+		</property>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource">
+			<ref local="myDataSource"/>
+		</property>
+	</bean>
+	
+</beans>

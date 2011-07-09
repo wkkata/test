@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ForeignStudentInCN"
+  id="myeclipse.1288927077817"
+  context-root="/ROOT"
+  j2ee-spec="5.0"
+  archive="ForeignStudentInCN.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

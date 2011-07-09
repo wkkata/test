@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="org.kjmx.praycards.entities.PCRoleGroup" 
+    table="pcrolegroup"
+>
+
+    <id
+        name="rgId"
+        type="java.lang.Integer"
+        column="rgID"
+    >
+        <generator class="native" />
+    </id>
+
+    <property
+        name="rgName"
+        type="java.lang.String"
+        column="rgName"
+        length="60"
+    />
+    <property
+        name="rgType"
+        type="java.lang.Integer"
+        column="rgType"
+        length="2"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to Pcuser -->
+    <set
+        name="pcUsers"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <key>
+            <column name="rgID" />
+        </key>
+        <one-to-many 
+            class="org.kjmx.praycards.entities.PCUser"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

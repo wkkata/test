@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<!--
+		Created by the Middlegen Hibernate plugin 2.1
+
+		http://boss.bekk.no/boss/middlegen/ http://www.hibernate.org/
+	-->
+
+	<class name="org.kjmx.praycards.entities.PCFDestUser" table="pcfdestuser">
+
+		<id name="fduId" type="java.lang.Integer" column="fduID">
+			<generator class="native" />
+		</id>
+		<property name="fduName" column="fduName" type="java.lang.String"
+			length="255" />
+		<property name="fduAddr" column="fduAddr" type="java.lang.String"
+			length="255" />
+		<property name="fduMailCode" column="fdumailCode" type="java.lang.String"
+			length="10" />
+		<property name="fduTel" column="fduTel" type="java.lang.String"
+			length="20" />
+
+
+		<!-- Associations -->
+		<!-- derived association(s) for compound key -->
+		<!-- end of derived association(s) -->
+
+		<!-- bi-directional many-to-one association to Pcuser -->
+		<many-to-one name="pcUser" class="org.kjmx.praycards.entities.PCUser"
+			not-null="true">
+			<column name="userID" />
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

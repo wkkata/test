@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springFramework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName">
+	<!-- DAO -->
+	<bean id="pcUserDao" class="org.kjmx.praycards.dao.imp.PCUserDao">
+		<property name="stateStr" value="userState" />
+	</bean>
+	
+	<bean id="pcRoleGroupDao" class="org.kjmx.praycards.dao.imp.PCRoleGroupDao"></bean>
+</beans>

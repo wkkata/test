@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="org.kjmx.praycards.entities.PCUserLog" 
+    table="pcuserlog"
+>
+
+    <id
+        name="logId"
+        type="java.lang.Integer"
+        column="logID"
+    >
+        <generator class="native" />
+    </id>
+
+    <property
+        name="logType"
+        type="java.lang.Integer"
+        column="logType"
+        length="3"
+    />
+    <property
+        name="logDesc"
+        type="java.lang.String"
+        column="logDesc"
+        length="255"
+    />
+    <property
+        name="logData"
+        type="binary"
+        column="logData"
+        length="65535"
+    />
+    <property
+        name="logState"
+        type="java.lang.Integer"
+        column="logState"
+        length="5"
+    />
+    <property
+        name="logDate"
+        type="java.sql.Timestamp"
+        column="logDate"
+    />
+    <property
+        name="reserved1"
+        type="java.lang.String"
+        column="reserved1"
+        length="255"
+    />
+    <property
+        name="reserved2"
+        type="java.lang.String"
+        column="reserved2"
+        length="255"
+    />
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to Pcuser -->
+    <many-to-one
+        name="pcUser"
+        class="org.kjmx.praycards.entities.PCUser"
+        not-null="true"
+    >
+        <column name="userID" />
+    </many-to-one>
+    <!-- bi-directional many-to-one association to Pcproduct -->
+    <many-to-one
+        name="pcProduct"
+        class="org.kjmx.praycards.entities.PCProduct"
+        not-null="true"
+    >
+        <column name="productID" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>
